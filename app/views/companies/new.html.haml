@@ -1,0 +1,4 @@
+%h2 Add a Company
+= form_for @company, url: {action: 'create'} do |f|
+  = f.text_field :name
+  = f.submit

@@ -1,31 +1,17 @@
 Rails.application.routes.draw do
-  get 'contacts/new'
+  get 'home/index'
 
-  get 'contacts/create'
+  get 'companies/edit' #Don't know why I had to put this in
+  get 'companies/destroy' #Don't know why I had to put this in
+  get 'companies/show' #Don't know why I had to put this in
 
-  get 'contacts/update'
-
-  get 'contacts/destroy'
-
-  get 'contacts/show'
-
-  get 'companies/create'
-
-  get 'companies/new'
-
-  get 'companies/update'
-
-  get 'companies/destroy'
-
-  get 'friendships/create'
-
-  get 'friendships/destroy'
+  resources :companies, :contacts, :friendships
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'home#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -31,6 +31,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'rspec'
 
+gem 'bootstrap-sass'
+gem 'haml'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
