@@ -16,6 +16,7 @@ class FriendshipsController < ApplicationController
     @friendship = Friendship.new(friendship_params)
 
     if @friendship.save
+      flash[:notice] = "Friendship created Successfully"
       redirect_to(:action => 'index')
 
     else
@@ -31,6 +32,7 @@ class FriendshipsController < ApplicationController
     @friendship = Friendship.find(params[:id])
 
     if @friendship.update_attributes(friendship_params)
+      flash[:notice] = "Friendship updated"
       redirect_to(:action => 'show', :id => @friendship.id)
 
     else
@@ -40,6 +42,7 @@ class FriendshipsController < ApplicationController
 
   def destroy
     @friendship = Friendship.find(params[:id]).destroy
+    flash[:notice] = "Friendship has been destroyed :("
     redirect_to(:action => 'index')
 
   end

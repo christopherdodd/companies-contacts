@@ -1,6 +1,14 @@
-li#company-list-item:hover {
-
+img {
+  max-width: 200px;
 }
-.edit-links {
-  display :inline;
+
+.field_with_errors {
+
+  label {
+    color: #AA0000;
+  }
+
+  input {
+    border: 1px solid #AA0000;
+  }
 }

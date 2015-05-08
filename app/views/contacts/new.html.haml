@@ -1,4 +1,7 @@
 %h2 Add a Contact
+
+= error_messages_for(@contact)
+
 = simple_form_for @contact, url: {action: 'create'} do |f|
   = f.input :first_name
   = f.input :last_name

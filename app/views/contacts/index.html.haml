@@ -1,3 +1,9 @@
 %h2 Contacts
+
+-if !flash[:notice].blank?
+  .row
+    .notice.alert.alert-success
+      =flash[:notice]
+
 = render 'contact_list'
 = link_to '<< Back to index page', :controller => 'home', :action => 'index'

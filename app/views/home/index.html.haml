@@ -1,11 +1,36 @@
-%h1 Companies & Contacts
-%em See who's who in the Zoo
+.page-header
+  %h1 Companies & Contacts
+  %small See who's who in the Zoo
 
-%h2 Companies
-= render 'companies/company_list'
+-if !flash[:notice].blank?
+  .row
+    .notice.alert.alert-success
+      =flash[:notice]
 
-%h2 Contacts
-= render 'contacts/contact_list'
+.row
+  .col-md-3.col-sm-3.col-xs-7
+    .panel.panel-primary
+      .panel-heading
+        %h2.panel-title Companies
+      .panel-body
+        = render 'companies/company_list'
+      .panel-footer
+        = link_to "Add a Company", :controller => 'companies', :action => 'new'
 
-%h2 Friendships
-= render 'friendships/friendship_list'
+  .col-md-3.col-sm-3.col-xs-7
+    .panel.panel-primary
+      .panel-heading
+        %h2.panel-title Contacts
+      .panel-body
+        = render 'contacts/contact_list'
+      .panel-footer
+        = link_to "Add a Contact", :controller => 'contacts', :action => 'new'
+
+  .col-md-4.col-sm-6.col.xs-7
+    .panel.panel-primary
+      .panel-heading
+        %h2.panel-title Friendships
+      .panel-body
+        = render 'friendships/friendship_list'
+      .panel-footer
+        = link_to "Add a Friendship", :controller => 'friendships', :action => 'new'

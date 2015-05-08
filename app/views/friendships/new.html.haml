@@ -1,4 +1,7 @@
 %h2 Add a Friendship
+
+= error_messages_for(@friendship)
+
 = simple_form_for @friendship, url: {action: 'create'} do |f|
   = f.association :contact, label_method: :full_name, value_method: :id, include_blank: false
   = f.association :friend, label_method: :full_name, value_method: :id, include_blank: false

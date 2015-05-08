@@ -13,6 +13,7 @@ class CompaniesController < ApplicationController
     @company = Company.new(company_params)
 
     if @company.save
+      flash[:notice] = "Company '#{@company.name}' created Successfully"
       redirect_to(:action => 'index')
 
     else
@@ -32,6 +33,7 @@ class CompaniesController < ApplicationController
     @company = Company.find(params[:id])
 
     if @company.update_attributes(company_params)
+      flash[:notice] = "Company '#{@company.name}' has been updated"
       redirect_to(:action => 'show', :id => @company.id)
 
     else
@@ -41,6 +43,7 @@ class CompaniesController < ApplicationController
 
   def destroy
     @company = Company.find(params[:id]).destroy
+    flash[:notice] = "Company '#{@company.name}' has been deleted"
     redirect_to(:action => 'index')
 
   end

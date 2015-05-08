@@ -1,10 +1,10 @@
-- @friendships.each do |f|
-  %li{:class => 'friendship-list-item'}
-    =link_to f.friendship_desc, :controller => 'friendships', :action => 'show', :id => f.id
-    .edit-links
-      =link_to 'Edit', :controller => 'friendships', :action => 'edit', :id => f.id
-      |
-      =link_to 'Delete', {:controller => 'friendships', :action => 'destroy', :id => f.id}, method: :delete, data: { confirm: 'Are you certain you want to delete this friendship?' }
+%table.table.table-striped
+  -@friendships.each do |f|
+    %tr
+      %td{:class => 'friendship-list-item'}
+        %span{:class => "glyphicon glyphicon-transfer"}
+        %strong=link_to f.friendship_short_desc, :controller => 'friendships', :action => 'show', :id => f.id
+        .edit-links
+          %td=link_to 'Edit', :controller => 'friendships', :action => 'edit', :id => f.id
+          %td=link_to 'Delete', {:controller => 'friendships', :action => 'destroy', :id => f.id}, method: :delete, data: { confirm: 'Are you certain you want to delete this friendship?' }
 
-
-= link_to "Add a Friendship", :controller => 'friendships', :action => 'new'
