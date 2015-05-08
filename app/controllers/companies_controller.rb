@@ -6,6 +6,7 @@ class CompaniesController < ApplicationController
 
   def show
     @company = Company.find(params[:id])
+    @contacts = Contact.where(:company_id => params[:id])
   end
 
   def create
@@ -20,7 +21,7 @@ class CompaniesController < ApplicationController
   end
 
   def edit
-
+    @company = Company.find(params[:id])
   end
 
   def new
@@ -28,9 +29,20 @@ class CompaniesController < ApplicationController
   end
 
   def update
+    @company = Company.find(params[:id])
+
+    if @company.update_attributes(company_params)
+      redirect_to(:action => 'show', :id => @company.id)
+
+    else
+      render('edit')
+    end
   end
 
   def destroy
+    @company = Company.find(params[:id]).destroy
+    redirect_to(:action => 'index')
+
   end
 
   private

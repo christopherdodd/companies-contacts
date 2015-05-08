@@ -1,8 +1,8 @@
 = link_to "Add a Company", :controller => 'companies', :action => 'new'
 - @companies.each do |c|
   %li{:class => 'company-list-item'}
-    =link_to c.name, :controller => 'companies', :action => 'show'
+    =link_to c.name, :controller => 'companies', :action => 'show', :id => c.id
     .edit-links
-      =link_to 'Edit', :controller => 'companies', :action => 'edit'
+      =link_to 'Edit', :controller => 'companies', :action => 'edit', :id => c.id
       |
-      =link_to 'Delete', :controller => 'companies', :action => 'destroy'
+      =link_to 'Delete', {:controller => 'companies', :action => 'destroy', :id => c.id}, method: :delete, data: { confirm: 'Are you certain you want to delete ' + c.name + '?' }

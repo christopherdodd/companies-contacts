@@ -5,6 +5,10 @@ class ContactsController < ApplicationController
   def create
   end
 
+  def edit
+    @contact = Contact.find(params[:id])
+  end
+
   def update
   end
 
