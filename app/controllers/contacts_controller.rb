@@ -41,7 +41,7 @@ class ContactsController < ApplicationController
 
   def show
     @contact = Contact.find(params[:id])
-    @company = Company.find(@contact.company_id)
+    @friendships = Friendship.where(:contact => @contact) + Friendship.where(:friend => @contact)
   end
 
   private

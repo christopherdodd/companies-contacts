@@ -1,7 +1,13 @@
 %h2=@contact.full_name
-%h3=@contact.position + ' at ' + @company.name
+%h3
+  =@contact.position + ' at '
+  =link_to @contact.company.name, :controller => "companies", :action => "show", :id => @contact.company.id
 
 %h3=@contact.first_name + ' is friends with:'
--#List Friendships here
+- @friendships.each do |f|
+  -if f.contact != @contact
+    %li=link_to f.contact.full_name, :controller => "contacts", :action => "show", :id => f.contact_id
+  -if f.friend != @contact
+    %li=link_to f.friend.full_name, :controller => "contacts", :action => "show", :id => f.friend_id
 
 = link_to '<< Back to index page', :controller => 'home', :action => 'index'
