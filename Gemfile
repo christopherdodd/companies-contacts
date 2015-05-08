@@ -33,6 +33,7 @@ gem 'rspec'
 
 gem 'bootstrap-sass'
 gem 'haml'
+gem 'simple_form'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

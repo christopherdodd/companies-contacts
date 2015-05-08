@@ -1,5 +1,5 @@
 class Contact < ActiveRecord::Base
-  has_one :company
+  belongs_to :company
   has_many :friendships
   has_many :friends, :through => 'friendships'
 end

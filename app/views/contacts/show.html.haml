@@ -1,0 +1,7 @@
+%h2=@contact.first_name + ' ' + @contact.last_name
+%h3=@contact.position + ' at ' + @company.name
+
+%h3=@contact.first_name + ' is friends with:'
+-#List Friendships here
+
+= link_to '<< Back to index page', :controller => 'home', :action => 'index'

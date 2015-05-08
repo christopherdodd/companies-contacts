@@ -1,0 +1,9 @@
+%h2 Add a Contact
+= simple_form_for @contact, url: {action: 'create'} do |f|
+  = f.input :first_name
+  = f.input :last_name
+  = f.association :company
+  = f.input :position
+  = f.input :phone
+  = f.input :email
+  = f.submit

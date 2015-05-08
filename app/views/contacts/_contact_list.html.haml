@@ -1,3 +1,9 @@
+= link_to "Add a Contact", :controller => 'contacts', :action => 'new'
 - @contacts.each do |c|
+  - full_name = c.first_name + ' ' + c.last_name
   %li{:class => 'contact-list-item'}
-    %a{:href => '#', :class => 'contact-link'}= c.name
+    =link_to full_name, :controller => 'contacts', :action => 'show', :id => c.id
+    .edit-links
+      =link_to 'Edit', :controller => 'contacts', :action => 'edit', :id => c.id
+      |
+      =link_to 'Delete', {:controller => 'contacts', :action => 'destroy', :id => c.id}, method: :delete, data: { confirm: 'Are you certain you want to delete ' + full_name + '?' }
