@@ -12,7 +12,7 @@ class ContactsController < ApplicationController
 
     if @contact.save
       flash[:notice] = "Contact '#{@contact.full_name}' created Successfully"
-      redirect_to(:action => 'index')
+      redirect_to(:controller => 'home', :action => 'index')
 
     else
       render('new')
@@ -38,7 +38,7 @@ class ContactsController < ApplicationController
   def destroy
     @contact = Contact.find(params[:id]).destroy
     flash[:notice] = "Contact '#{@contact.full_name}' has been deleted"
-    redirect_to(:action => 'index')
+    redirect_to(:controller => 'home', :action => 'index')
 
   end
 

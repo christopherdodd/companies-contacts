@@ -14,7 +14,7 @@ class CompaniesController < ApplicationController
 
     if @company.save
       flash[:notice] = "Company '#{@company.name}' created Successfully"
-      redirect_to(:action => 'index')
+      redirect_to(:controller => 'home', :action => 'index')
 
     else
       render('new')
@@ -44,7 +44,7 @@ class CompaniesController < ApplicationController
   def destroy
     @company = Company.find(params[:id]).destroy
     flash[:notice] = "Company '#{@company.name}' has been deleted"
-    redirect_to(:action => 'index')
+    redirect_to(:controller => 'home', :action => 'index')
 
   end
 

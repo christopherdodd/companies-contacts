@@ -1,25 +1,26 @@
 // Full Name & Photo
-%img{:src => "http://placehold.it/460x460"}
+%img{:src => "http://placehold.it/460x460", :class => 'profile-pic'}
 %h2=@contact.full_name
 
 //Position at Company
-%h3
-  =@contact.position + ' at '
-  =link_to @contact.company.name, :controller => "companies", :action => "show", :id => @contact.company.id
+.contact-info
+  %h3
+    =@contact.position + ' at '
+    =link_to @contact.company.name, :controller => "companies", :action => "show", :id => @contact.company.id
 
-// Contact Info
-%table.table.table-striped
-  -if @contact.phone != ""
-    %tr
-      %td
-        %span{:class => 'glyphicon glyphicon-earphone'}
-        =@contact.phone
+  // Contact Info
+  %table.table.table-striped
+    -if @contact.phone != ""
+      %tr
+        %td
+          %span{:class => 'glyphicon glyphicon-earphone'}
+          =@contact.phone
 
-  -if @contact.email != ""
-    %tr
-      %td
-        %span{:class => 'glyphicon glyphicon-envelope'}
-        =mail_to @contact.email, @contact.email
+    -if @contact.email != ""
+      %tr
+        %td
+          %span{:class => 'glyphicon glyphicon-envelope'}
+          =mail_to @contact.email, @contact.email
 
 
 //Friendships

@@ -6,4 +6,6 @@
         %strong=link_to c.name, :controller => 'companies', :action => 'show', :id => c.id
         .edit-links
           %td=link_to 'Edit', :controller => 'companies', :action => 'edit', :id => c.id
-          %td=link_to 'Delete', {:controller => 'companies', :action => 'destroy', :id => c.id}, method: :delete, data: { confirm: 'Are you certain you want to delete ' + c.name + '?' }
+          %td
+            =link_to({:controller => 'companies', :action => 'destroy', :id => c.id}, method: :delete, data: { confirm: 'Are you certain you want to delete ' + c.name + '?' }) do
+              %span{:class => 'glyphicon glyphicon-trash'}

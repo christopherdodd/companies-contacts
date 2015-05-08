@@ -6,5 +6,6 @@
         %strong=link_to f.friendship_short_desc, :controller => 'friendships', :action => 'show', :id => f.id
         .edit-links
           %td=link_to 'Edit', :controller => 'friendships', :action => 'edit', :id => f.id
-          %td=link_to 'Delete', {:controller => 'friendships', :action => 'destroy', :id => f.id}, method: :delete, data: { confirm: 'Are you certain you want to delete this friendship?' }
-
+          %td
+            =link_to({:controller => 'friendships', :action => 'destroy', :id => f.id}, method: :delete, data: { confirm: 'Are you certain you want to delete this friendship?' }) do
+              %span{:class => 'glyphicon glyphicon-trash'}
