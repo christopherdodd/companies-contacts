@@ -5,14 +5,25 @@ class Friendship < ActiveRecord::Base
   belongs_to :friend, :class_name => 'Contact'
 
   # Validations
-  validates_uniqueness_of :contact_id, :scope => :friend_id
-  validates_uniqueness_of :friend_id, :scope => :contact_id # Validate uniqueness of combo both ways
-  validate :friends_with_self # Validate that contact and friend arent the same
+  validate :uniqueness_of_combination
+  validate :cannot_be_friends_with_self # Validate that contact and friend arent the same
 
   # Custom Methods
-  def friends_with_self
-    if :user_id == :friend_id
-      errors.add(:user_id, 'Sorry. One cannot be friends with oneself')
+  def uniqueness_of_combination
+
+    attempted_friendship = [contact_id, friend_id]
+
+    Friendship.all.each do |f|
+      inverse_friendship = [f.friend.id, f.contact.id]
+      if attempted_friendship == inverse_friendship
+        errors.add(:users_id,'. Friendship already exists')
+      end
+    end
+  end
+
+  def cannot_be_friends_with_self
+    if contact_id == friend_id
+      errors.add(:user_id, '. Sorry, One cannot be friends with oneself')
     end
   end
 

@@ -6,3 +6,5 @@
   = f.association :contact, label_method: :full_name, value_method: :id, include_blank: false
   = f.association :friend, label_method: :full_name, value_method: :id, include_blank: false
   = f.submit
+
+= link_to '<< Back to index page', :controller => 'home', :action => 'index'

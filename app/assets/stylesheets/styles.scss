@@ -1,3 +1,7 @@
+body {
+  background-color: #EFEFEF;
+}
+
 img {
   max-width: 200px;
 }
@@ -11,4 +15,12 @@ img {
   input {
     border: 1px solid #AA0000;
   }
+}
+.panel {
+  margin: 10px;
+}
+
+.page-header {
+  background-color: skyblue;
+  color: white;
 }
