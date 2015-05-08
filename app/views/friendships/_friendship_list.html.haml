@@ -1,1 +1,10 @@
+- @friendships.each do |f|
+  %li{:class => 'friendship-list-item'}
+    =link_to f.friendship_desc, :controller => 'friendships', :action => 'show', :id => f.id
+    .edit-links
+      =link_to 'Edit', :controller => 'friendships', :action => 'edit', :id => f.id
+      |
+      =link_to 'Delete', {:controller => 'friendships', :action => 'destroy', :id => f.id}, method: :delete, data: { confirm: 'Are you certain you want to delete this friendship?' }
+
+
 = link_to "Add a Friendship", :controller => 'friendships', :action => 'new'
