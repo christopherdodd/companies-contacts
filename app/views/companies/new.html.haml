@@ -2,9 +2,10 @@
 
 = error_messages_for(@company)
 
-= form_for @company, url: {action: 'create'}, :html => {:multipart => true } do |f|
-  = f.text_field :name
-  = f.file_field :image
-  = f.submit
+= simple_form_for @company, url: {action: "create"}, html: { class: 'form-horizontal'} do |f|
+  .form-group= f.input :name, :label_html => {:class => 'col-sm-2 control-label'}
+  .form-group= f.input :image, as: :file, :label_html => {:class => 'col-sm-2 control-label'}
+  .col-sm-offset-2.col-sm-10
+    .form-group= f.submit 'Create Company', :class => 'btn btn-default'
 
 = link_to '<< Back to index page', :controller => 'home', :action => 'index'

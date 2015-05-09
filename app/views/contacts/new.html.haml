@@ -2,14 +2,15 @@
 
 = error_messages_for(@contact)
 
-= simple_form_for @contact, url: {action: 'create'} do |f|
-  = f.input :first_name
-  = f.input :last_name
-  = f.association :company
-  = f.input :position
-  = f.input :phone
-  = f.input :email
-  = f.input :image, as: :file, :label => "Profile Picture:"
-  = f.submit
+= simple_form_for @contact, url: {action: "create"}, html: { class: 'form-horizontal'} do |f|
+  .form-group= f.input :first_name, :label_html => {:class => 'col-sm-2 control-label'}
+  .form-group= f.input :last_name, :label_html => {:class => 'col-sm-2 control-label'}
+  .form-group= f.association :company, :label_html => {:class => 'col-sm-2 control-label'}
+  .form-group= f.input :position, :label_html => {:class => 'col-sm-2 control-label'}
+  .form-group= f.input :phone, :label_html => {:class => 'col-sm-2 control-label'}
+  .form-group= f.input :email, :label_html => {:class => 'col-sm-2 control-label'}
+  .form-group= f.input :image, as: :file, :label => "Profile Picture:", :label_html => {:class => 'col-sm-2 control-label'}
+  .col-sm-offset-2.col-sm-10
+    .form-group= f.submit 'Create Contact', :class => 'btn btn-default'
 
 = link_to '<< Back to index page', :controller => 'home', :action => 'index'

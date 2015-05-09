@@ -2,9 +2,10 @@
 
 = error_messages_for(@friendship)
 
-= simple_form_for @friendship, url: {action: 'create'} do |f|
-  = f.association :contact, label_method: :full_name, value_method: :id, include_blank: false
-  = f.association :friend, label_method: :full_name, value_method: :id, include_blank: false
-  = f.submit
+= simple_form_for @friendship, url: {action: 'create'}, html: { class: 'form-horizontal'} do |f|
+  .form-group= f.association :contact, label_method: :full_name, value_method: :id, include_blank: false, :label_html => {:class => 'col-sm-2 control-label'}
+  .form-group= f.association :friend, label_method: :full_name, value_method: :id, include_blank: false, :label_html => {:class => 'col-sm-2 control-label'}
+  .col-sm-offset-2.col-sm-10
+    .form-group= f.submit 'Create Friendship', :class => 'btn btn-default'
 
 = link_to '<< Back to index page', :controller => 'home', :action => 'index'

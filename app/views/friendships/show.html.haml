@@ -1,14 +1,17 @@
-%h2=@friendship.friendship_desc
 .row
-  =link_to 'Edit Friendship', :action => 'edit', :id => @friendship.id, :class => 'button'
-.row
-  - if @friendship.contact.image?
-    = image_tag @friendship.contact.image_url(:profile).to_s
-  - else
-    = image_tag "profile-picture-placeholder.png"
-  - if @friendship.friend.image?
-    = image_tag @friendship.friend.image_url(:profile).to_s
-  - else
-    = image_tag "profile-picture-placeholder.png"
+  .friendship-images
+    - if @friendship.contact.image?
+      = image_tag @friendship.contact.image_url(:profile).to_s
+    - else
+      = image_tag "profile-picture-placeholder.png"
+    - if @friendship.friend.image?
+      = image_tag @friendship.friend.image_url(:profile).to_s
+    - else
+      = image_tag "profile-picture-placeholder.png"
+  %h2=@friendship.friendship_desc
+  .friendship-links
+    =link_to 'Edit Friendship', :action => 'edit', :id => @friendship.id, :class => 'button'
+    %br
+    =link_to 'Delete Friendship', {:action => 'destroy', :id => @friendship.id}, method: :delete, data: { confirm: 'Are you certain you want to delete this friendship?' }
 .row
   = link_to '<< Back to index page', :controller => 'home', :action => 'index'
