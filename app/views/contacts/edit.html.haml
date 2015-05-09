@@ -6,6 +6,7 @@
   = f.input :position
   = f.input :phone
   = f.input :email
+  = f.input :image, as: :file, :label => "Profile Picture:"
   = f.submit
 
 = link_to '<< Back to index page', :controller => 'home', :action => 'index'

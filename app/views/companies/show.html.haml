@@ -1,10 +1,20 @@
-= image_tag @company.image_url.to_s if @company.image?
+.profile-pic
+  -if @company.image?
+    = image_tag @company.image_url(:profile).to_s
+  -else
+    = image_tag "company-placeholder.png"
+
 %h2= @company.name
 =link_to 'Edit company', :action => 'edit', :id => @company.id, :class => 'button'
-%h3
-  Contacts who work at
-  %em= @company.name
+%br
+=link_to 'Delete company', {:action => 'destroy', :id => @company.id}, method: :delete, data: { confirm: 'Are you certain you want to delete ' + @company.name + '?' }
 
-= render 'contacts/contact_list'
+-unless @contacts.blank?
+  .row
+    %h3
+      Contacts who work at
+      %em= @company.name
+
+  = render 'contacts/contact_list'
 
 = link_to '<< Back to index page', :controller => 'home', :action => 'index'

@@ -15,6 +15,10 @@ class Contact < ActiveRecord::Base
   validates_format_of :email, :with => EMAIL_REGEX, :allow_blank => true
   validates_numericality_of :phone, :allow_blank => true
 
+  # CarrierWave
+  mount_uploader :image, ImageUploader
+
+  # Custom Methods
   def full_name
     self.first_name + ' ' + self.last_name
   end

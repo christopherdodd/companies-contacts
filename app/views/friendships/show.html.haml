@@ -1,5 +1,14 @@
 %h2=@friendship.friendship_desc
-=link_to 'Edit Friendship', :action => 'edit', :id => @friendship.id, :class => 'button'
-%img{:src => "http://placehold.it/460x460"}
-%img{:src => "http://placehold.it/460x460"}
-= link_to '<< Back to index page', :controller => 'home', :action => 'index'
+.row
+  =link_to 'Edit Friendship', :action => 'edit', :id => @friendship.id, :class => 'button'
+.row
+  - if @friendship.contact.image?
+    = image_tag @friendship.contact.image_url(:profile).to_s
+  - else
+    = image_tag "profile-picture-placeholder.png"
+  - if @friendship.friend.image?
+    = image_tag @friendship.friend.image_url(:profile).to_s
+  - else
+    = image_tag "profile-picture-placeholder.png"
+.row
+  = link_to '<< Back to index page', :controller => 'home', :action => 'index'

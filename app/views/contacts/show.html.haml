@@ -1,5 +1,9 @@
 // Full Name & Photo
-%img{:src => "http://placehold.it/460x460", :class => 'profile-pic'}
+.profile-pic
+  -if @contact.image?
+    = image_tag @contact.image_url(:profile).to_s
+  -else
+    = image_tag "profile-picture-placeholder.png"
 %h2=@contact.full_name
 
 //Position at Company
@@ -8,6 +12,8 @@
     =@contact.position + ' at '
     =link_to @contact.company.name, :controller => "companies", :action => "show", :id => @contact.company.id
   =link_to 'Edit contact', :action => 'edit', :id => @contact.id, :class => 'button'
+  %br
+  =link_to 'Delete contact', {:action => 'destroy', :id => @contact.id}, method: :delete, data: { confirm: 'Are you certain you want to delete ' + @contact.full_name + '?' }
 
   // Contact Info
   %table.table.table-striped
@@ -30,12 +36,18 @@
 
   -if f.contact != @contact
     %li
-      %img{:src => "http://placehold.it/60x60"}
+      - if f.contact.image?
+        = image_tag f.contact.image_url(:thumb).to_s
+      - else
+        = image_tag "profile-picture-placeholder.png"
       =link_to f.contact.full_name, :controller => "contacts", :action => "show", :id => f.contact_id
 
   -if f.friend != @contact
     %li
-      %img{:src => "http://placehold.it/60x60"}
+      - if f.friend.image?
+        = image_tag f.friend.image_url(:thumb).to_s
+      - else
+        = image_tag "profile-picture-placeholder.png"
       =link_to f.friend.full_name, :controller => "contacts", :action => "show", :id => f.friend_id
 
 = link_to '<< Back to index page', :controller => 'home', :action => 'index'
