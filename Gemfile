@@ -46,6 +46,8 @@ gem 'haml'
 gem 'simple_form'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'fog'
+gem 'figaro'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

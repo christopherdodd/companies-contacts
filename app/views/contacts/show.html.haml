@@ -39,7 +39,7 @@
       - if f.contact.image?
         = image_tag f.contact.image_url(:thumb).to_s
       - else
-        = image_tag "profile-picture-placeholder.png"
+        = image_tag "profile-picture-placeholder.png", :height => '50', :width => '50'
       =link_to f.contact.full_name, :controller => "contacts", :action => "show", :id => f.contact_id
 
   -if f.friend != @contact
@@ -47,7 +47,7 @@
       - if f.friend.image?
         = image_tag f.friend.image_url(:thumb).to_s
       - else
-        = image_tag "profile-picture-placeholder.png"
+        = image_tag "profile-picture-placeholder.png", :height => '50', :width => '50'
       =link_to f.friend.full_name, :controller => "contacts", :action => "show", :id => f.friend_id
 
 = link_to '<< Back to index page', :controller => 'home', :action => 'index'

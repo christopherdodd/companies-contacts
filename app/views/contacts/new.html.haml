@@ -11,6 +11,6 @@
   .form-group= f.input :email, :label_html => {:class => 'col-sm-2 control-label'}
   .form-group= f.input :image, as: :file, :label => "Profile Picture:", :label_html => {:class => 'col-sm-2 control-label'}
   .col-sm-offset-2.col-sm-10
-    .form-group= f.submit 'Create Contact', :class => 'btn btn-default'
+    .form-group= f.submit 'Create Contact', :input_html => {:class => 'btn btn-default'}
 
 = link_to '<< Back to index page', :controller => 'home', :action => 'index'

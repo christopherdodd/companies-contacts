@@ -6,6 +6,6 @@
   .form-group= f.input :name, :label_html => {:class => 'col-sm-2 control-label'}
   .form-group= f.input :image, as: :file, :label_html => {:class => 'col-sm-2 control-label'}
   .col-sm-offset-2.col-sm-10
-    .form-group= f.submit 'Create Company', :class => 'btn btn-default'
+    .form-group= f.submit 'Create Company', :input_html => {:class => 'btn btn-default'}
 
 = link_to '<< Back to index page', :controller => 'home', :action => 'index'
