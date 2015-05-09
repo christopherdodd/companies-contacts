@@ -38,6 +38,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'factory_girl_rails'
 end
 
 
@@ -48,6 +49,9 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
 gem 'figaro'
+gem 'faker'
+gem 'capybara'
+gem 'rails_12factor'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

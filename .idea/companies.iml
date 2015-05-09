@@ -138,6 +138,7 @@
     <orderEntry type="library" scope="PROVIDED" name="builder (v3.2.2, rbenv: 2.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bundler (v1.9.6, rbenv: 2.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="byebug (v4.0.5, rbenv: 2.2.0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="capybara (v2.4.4, rbenv: 2.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="carrierwave (v0.10.0, rbenv: 2.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="coffee-rails (v4.1.0, rbenv: 2.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="coffee-script (v2.4.1, rbenv: 2.2.0) [gem]" level="application" />
@@ -148,6 +149,9 @@
     <orderEntry type="library" scope="PROVIDED" name="erubis (v2.7.0, rbenv: 2.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="excon (v0.45.3, rbenv: 2.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="execjs (v2.5.2, rbenv: 2.2.0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="factory_girl (v4.5.0, rbenv: 2.2.0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="factory_girl_rails (v4.5.0, rbenv: 2.2.0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="faker (v1.4.3, rbenv: 2.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="figaro (v1.1.1, rbenv: 2.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="fission (v0.5.0, rbenv: 2.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="fog (v1.30.0, rbenv: 2.2.0) [gem]" level="application" />
@@ -219,6 +223,7 @@
     <orderEntry type="library" scope="PROVIDED" name="tzinfo (v1.2.2, rbenv: 2.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="uglifier (v2.7.1, rbenv: 2.2.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="web-console (v2.1.2, rbenv: 2.2.0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="xpath (v2.0.0, rbenv: 2.2.0) [gem]" level="application" />
   </component>
   <component name="RModuleSettingsStorage">
     <LOAD_PATH number="0" />
