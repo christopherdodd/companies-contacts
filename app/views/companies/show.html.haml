@@ -1,5 +1,6 @@
 = image_tag @company.image_url.to_s if @company.image?
 %h2= @company.name
+=link_to 'Edit company', :action => 'edit', :id => @company.id, :class => 'button'
 %h3
   Contacts who work at
   %em= @company.name

@@ -12,8 +12,8 @@ class Contact < ActiveRecord::Base
 
   validates_presence_of :first_name, :last_name, :company, :position
   validates_length_of :first_name, :last_name, :position, :maximum => 50
-  validates_format_of :email, :with => EMAIL_REGEX
-  validates_numericality_of :phone
+  validates_format_of :email, :with => EMAIL_REGEX, :allow_blank => true
+  validates_numericality_of :phone, :allow_blank => true
 
   def full_name
     self.first_name + ' ' + self.last_name

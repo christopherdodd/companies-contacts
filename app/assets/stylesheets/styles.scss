@@ -18,6 +18,9 @@ img {
 }
 .panel {
   margin: 10px;
+  float: left;
+  clear: left;
+  display: inline-block;
 }
 
 .page-header {

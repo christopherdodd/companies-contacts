@@ -36,7 +36,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Unicorn as the app server
 # gem 'unicorn'
 
-gem 'rspec'
+group :development, :test do
+  gem 'rspec-rails'
+end
+
 
 gem 'bootstrap-sass'
 gem 'haml'

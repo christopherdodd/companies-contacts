@@ -7,6 +7,7 @@
   %h3
     =@contact.position + ' at '
     =link_to @contact.company.name, :controller => "companies", :action => "show", :id => @contact.company.id
+  =link_to 'Edit contact', :action => 'edit', :id => @contact.id, :class => 'button'
 
   // Contact Info
   %table.table.table-striped
