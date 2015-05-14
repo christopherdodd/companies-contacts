@@ -15,7 +15,7 @@ class Friendship < ActiveRecord::Base
 
     Friendship.all.each do |f|
       inverse_friendship = [f.friend.id, f.contact.id]
-      if attempted_friendship == inverse_friendship
+      if attempted_friendship == inverse_friendship || attempted_friendship == [f.contact_id, f.friend_id]
         errors.add(:users_id,'. Friendship already exists')
       end
     end

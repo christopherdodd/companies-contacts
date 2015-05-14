@@ -1,9 +1,10 @@
 %table.table.table-striped
   - @companies.each do |c|
     %tr
-      %td{:class => 'company-list-item'}
+      %td.company-list-item
         %span{:class => "glyphicon glyphicon-briefcase"}
-        %strong=link_to c.name, :controller => 'companies', :action => 'show', :id => c.id
+        %strong=link_to c.name, company_path(c)
+        -#%strong=link_to c.name, :controller => 'companies', :action => 'show', :id => c.id
         .edit-links
           %td=link_to 'Edit', :controller => 'companies', :action => 'edit', :id => c.id
           %td

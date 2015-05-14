@@ -1,7 +1,7 @@
 class Company < ActiveRecord::Base
 
   # Relationships
-  has_many :contacts
+  has_many :contacts, :dependent => :destroy
 
   # Validations
   validates_presence_of :name

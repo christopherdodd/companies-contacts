@@ -6,7 +6,7 @@ class CompaniesController < ApplicationController
 
   def show
     @company = Company.find(params[:id])
-    @contacts = Contact.where(:company_id => params[:id])
+    @contacts = Contact.where(company_id: params[:id])
   end
 
   def create
